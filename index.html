@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sshift — A Windows-native UI for OpenSSH</title>
+  <meta name="description" content="Manage your SSH connections with a native Windows app. Profiles are standard OpenSSH config, so they work in any terminal with ssh <alias>.">
+  <meta property="og:title" content="sshift — A Windows-native UI for OpenSSH">
+  <meta property="og:description" content="Configure visually. Use everywhere.">
+  <meta property="og:image" content="https://jvas28.github.io/sshift/assets/og.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/favicon.png">
+  <link rel="stylesheet" href="assets/site.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="./"><img src="assets/icon.png" alt="">sshift</a>
+      <nav class="nav" aria-label="Main">
+        <a href="#features">Features</a>
+        <a href="#how">How it works</a>
+        <a href="#faq">FAQ</a>
+        <a href="support.html">Support</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero wrap">
+      <img class="logo" src="assets/icon.png" alt="sshift logo" width="96" height="96">
+      <h1>SSH profiles for Windows,<br><span class="grad">configured visually</span></h1>
+      <p class="lead">sshift is a native Windows app for your SSH connections. Create a profile once and use it everywhere: in sshift, PowerShell, Windows Terminal, Git and VS Code.</p>
+      <div class="actions">
+        <!-- STORE BADGE: when the app is live, replace the span below with:
+             <a class="store-badge" href="https://apps.microsoft.com/detail/STORE_ID?mode=direct">
+               <img src="https://get.microsoft.com/images/en-us%20dark.svg" alt="Get it from Microsoft">
+             </a> -->
+        <span class="coming-soon">Coming soon to Microsoft Store</span>
+      </div>
+      <p class="price">USD 2.99 · one-time purchase · 7-day free trial · Windows 10 &amp; 11 (x64, ARM64)</p>
+
+      <div class="terminal" role="img" aria-label="Terminal: ssh prod-api connects using the profile created in sshift">
+        <div class="bar"><span></span><span></span><span></span></div>
+        <pre><span class="p">PS&gt;</span> ssh prod-api
+<span class="c"># the profile you created in sshift</span>
+deploy@prod-api:~$ _</pre>
+      </div>
+
+      <picture class="shot">
+        <img src="assets/screenshots/1-profiles.webp" width="1600" height="900" alt="sshift profile list with favorites, tags and Connect buttons">
+      </picture>
+    </div>
+
+    <section id="features">
+      <div class="wrap">
+        <h2>Everything you edit in ~/.ssh/config, without editing it</h2>
+        <p class="sub">A focused tool: sshift doesn't replace OpenSSH or your terminal. It gives the configuration you already rely on a clean, native interface.</p>
+        <div class="grid">
+          <div class="card"><div class="icon">⚡</div><h3>Works in every terminal</h3><p>Profiles become standard OpenSSH <code>Host</code> entries: <code>ssh alias</code> works in PowerShell, CMD, Windows Terminal, Git, VS Code, scp and sftp.</p></div>
+          <div class="card"><div class="icon">🖱️</div><h3>One-click connect</h3><p>Open any profile in Windows Terminal, PowerShell or Command Prompt. Copy the <code>ssh</code> command with Ctrl+C.</p></div>
+          <div class="card"><div class="icon">🔑</div><h3>Keys and identities</h3><p>Discover keys in your .ssh folder, see fingerprints, copy public keys and generate ED25519 or RSA keys.</p></div>
+          <div class="card"><div class="icon">🧭</div><h3>Jump hosts and tunnels</h3><p>ProxyJump with loop detection, local, remote and SOCKS port forwarding, keep-alives and more.</p></div>
+          <div class="card"><div class="icon">✅</div><h3>Validated by OpenSSH</h3><p>Every change is checked with <code>ssh -G</code> before it is saved. A broken config never replaces a working one.</p></div>
+          <div class="card"><div class="icon">📥</div><h3>Import what you have</h3><p>Bring simple hosts from your existing ~/.ssh/config. Advanced blocks are left untouched.</p></div>
+          <div class="card"><div class="icon">⭐</div><h3>Organized</h3><p>Favorites, tags and instant search (<code>tag:production</code>) across names, aliases, hosts and users.</p></div>
+          <div class="card"><div class="icon">🎨</div><h3>Native Windows 11 design</h3><p>Fluent design with Mica, light and dark themes, keyboard shortcuts and screen reader labels.</p></div>
+          <div class="card"><div class="icon">🔒</div><h3>Private by design</h3><p>No accounts, no cloud, no telemetry. Passwords, passphrases and private keys are never stored.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how">
+      <div class="wrap">
+        <h2>How it works</h2>
+        <p class="sub">Your existing configuration is never rewritten. sshift keeps its profiles in their own file and adds a single <code>Include</code> line, backing up your config first.</p>
+        <div class="flow">
+          <div class="step"><code>sshift</code><p>You create and edit profiles in the app.</p></div>
+          <div class="arrow" aria-hidden="true">→</div>
+          <div class="step"><code>~/.ssh/sshift/config</code><p>Generated as plain OpenSSH config and validated with <code>ssh -G</code>.</p></div>
+          <div class="arrow" aria-hidden="true">→</div>
+          <div class="step"><code>~/.ssh/config</code><p>One <code>Include</code> line at the top; your own entries stay as they are.</p></div>
+          <div class="arrow" aria-hidden="true">→</div>
+          <div class="step"><code>ssh.exe</code><p>The OpenSSH client built into Windows connects, exactly as from the command line.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="screenshots">
+      <div class="wrap">
+        <h2>Screenshots</h2>
+        <p class="sub">Dark and light themes follow your Windows settings.</p>
+        <div class="gallery">
+          <img src="assets/screenshots/2-keys.webp" width="1600" height="900" loading="lazy" alt="SSH keys page with fingerprints and ssh-agent status">
+          <img src="assets/screenshots/3-profiles-light.webp" width="1600" height="900" loading="lazy" alt="Profile list in the light theme">
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="wrap">
+        <h2>FAQ</h2>
+        <div class="faq">
+          <details><summary>What do I need to use sshift?</summary><p>Windows 10 version 1809 or later, or Windows 11, with the Windows OpenSSH Client. It is installed by default on current Windows versions; otherwise add it in Settings › System › Optional features.</p></details>
+          <details><summary>Will sshift change my existing ~/.ssh/config?</summary><p>Only by adding one <code>Include ~/.ssh/sshift/config</code> line at the top, after making a backup. Your own Host blocks are never modified or removed.</p></details>
+          <details><summary>What happens if I uninstall sshift?</summary><p>Your profiles stay in ~/.ssh/sshift/config and keep working with <code>ssh alias</code>. Your keys and your own configuration are never deleted.</p></details>
+          <details><summary>Does sshift store my passwords?</summary><p>No. Password logins work because ssh asks for the password in the terminal. sshift never stores passwords, passphrases or private key contents.</p></details>
+          <details><summary>Does it send any data?</summary><p>No. There is no telemetry, analytics or account. See the <a href="privacy.html">privacy policy</a>.</p></details>
+          <details><summary>Is there a trial?</summary><p>Yes, 7 days with every feature. After that, sshift is a one-time purchase of USD 2.99 (local prices vary).</p></details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>© 2026 Julio Vasconez</span>
+      <nav aria-label="Footer">
+        <a href="privacy.html">Privacy</a>
+        <a href="support.html">Support</a>
+        <a href="https://github.com/jvas28/sshift/releases">Release notes</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

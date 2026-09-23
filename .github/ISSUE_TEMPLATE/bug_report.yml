@@ -1,0 +1,25 @@
+name: Bug report
+description: Something in sshift doesn't work as expected
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What did you do, what did you expect, and what happened instead?
+    validations:
+      required: true
+  - type: textarea
+    id: diagnostics
+    attributes:
+      label: Diagnostic information
+      description: In sshift, open Diagnostics and click "Copy diagnostic information" (host information is redacted by default), then paste it here.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: config
+    attributes:
+      label: Relevant SSH configuration (optional)
+      description: Only if the problem is about a specific profile. Remove host names, user names and anything private first. Never paste private keys.
+      render: text
