@@ -7,7 +7,7 @@
 sshift manages your SSH connections with a native Windows 11 interface and writes them as standard OpenSSH configuration, so every profile also works from any terminal with `ssh <alias>`.
 
 - **Website:** https://jvas28.github.io/sshift
-- **Get it:** [Microsoft Store](https://apps.microsoft.com/detail/9NHDFW47LMN1) · USD 2.99 one-time, 7-day free trial
+- **Get it:** [Microsoft Store](https://apps.microsoft.com/detail/9NHDFW47LMN1) · USD 6.99 one-time, 7-day free trial
 - **Release notes:** [Releases](https://github.com/jvas28/sshift/releases)
 - **Support:** [open an issue](https://github.com/jvas28/sshift/issues/new/choose) or see the [support page](https://jvas28.github.io/sshift/support.html)
 - **Privacy:** [privacy policy](https://jvas28.github.io/sshift/privacy.html)
